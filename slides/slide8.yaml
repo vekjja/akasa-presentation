@@ -1,0 +1,23 @@
+background: white
+elements:
+  - kind: title
+    text: Key Design Trade-Offs
+
+  - kind: subtitle
+    text: How to explain why both deployment patterns exist
+
+  - kind: bullets
+    x: 0.85
+    y: 1.55
+    w: 11.7
+    h: 4.6
+    font_size: 19
+    bullets:
+      - Bare metal gives stronger control over hosts, storage layout, and performance tuning, but more day-2 operations stay manual or host-centric.
+      - Starting on a dedicated bare metal instance reduced migration risk and gave a contained environment to validate and tune the new telemetry pipeline.
+      - "GKE raises the abstraction level: easier rollout standardization, easier scaling, and cleaner multi-environment promotion patterns."
+      - Moving next to a dedicated GKE management cluster let the team apply those tuning decisions in Kubernetes while using a DaemonSet collector model for cluster-wide coverage.
+      - Converting Datadog HTTP checks to OpenTelemetry checks exposed a gap for JSON endpoint parsing, which was addressed by contributing upstream to SigNoz.
+      - Using official charts on GKE reduces drift from upstream, while custom Pulumi SDKs keep organizational standards reusable.
+      - Piloting one service on the OpenTelemetry SDK for logs and metrics created a low-risk path toward eventual switchover.
+      - Using custom Ansible playbooks for Compose keeps legacy or non-Kubernetes environments observable without changing the application instrumentation model.

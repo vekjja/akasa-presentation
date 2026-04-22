@@ -1,0 +1,102 @@
+background: white
+elements:
+  - kind: title
+    text: Operational Workflow
+
+  - kind: subtitle
+    text: From telemetry emission to troubleshooting and alerting
+
+  - kind: box
+    x: 0.7
+    y: 2.1
+    w: 2.2
+    h: 1.0
+    text: |-
+      1. Apps emit
+      DogStatsD / OTLP
+    fill: light_fill
+    font_size: 16
+    bold: true
+
+  - kind: box
+    x: 3.2
+    y: 2.1
+    w: 2.2
+    h: 1.0
+    text: |-
+      2. Collectors receive,
+      process, and export
+    fill: pale_green
+    font_size: 16
+    bold: true
+
+  - kind: box
+    x: 5.7
+    y: 2.1
+    w: 2.2
+    h: 1.0
+    text: |-
+      3. SigNoz stores and
+      correlates telemetry
+    fill: pale_orange
+    font_size: 16
+    bold: true
+
+  - kind: box
+    x: 8.2
+    y: 2.1
+    w: 2.2
+    h: 1.0
+    text: |-
+      4. Teams query UI,
+      dashboards, and traces
+    fill: light_fill
+    font_size: 16
+    bold: true
+
+  - kind: box
+    x: 10.7
+    y: 2.1
+    w: 2.0
+    h: 1.0
+    text: |-
+      5. Alert on symptoms
+      and drill into cause
+    fill: pale_green
+    font_size: 16
+    bold: true
+
+  - kind: arrow
+    x1: 2.9
+    y1: 2.6
+    x2: 3.2
+    y2: 2.6
+
+  - kind: arrow
+    x1: 5.4
+    y1: 2.6
+    x2: 5.7
+    y2: 2.6
+
+  - kind: arrow
+    x1: 7.9
+    y1: 2.6
+    x2: 8.2
+    y2: 2.6
+
+  - kind: arrow
+    x1: 10.4
+    y1: 2.6
+    x2: 10.7
+    y2: 2.6
+
+  - kind: bullets
+    x: 0.9
+    y: 4.5
+    w: 11.6
+    h: 1.2
+    font_size: 17
+    bullets:
+      - The first migration preserved existing DogStatsD metric emission and moved translation into the collector layer.
+      - Once the platform path was ready, one service was migrated to the OpenTelemetry SDK for logs and metrics so it was ready for switchover.
+      - After that compatibility step, the application-facing workflow stayed stable even as the backend moved to SigNoz.

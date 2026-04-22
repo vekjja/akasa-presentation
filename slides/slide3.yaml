@@ -1,0 +1,125 @@
+background: white
+elements:
+  - kind: title
+    text: Reference Architecture
+
+  - kind: subtitle
+    text: Common data flow across both environments
+
+  - kind: box
+    x: 0.8
+    y: 2.0
+    w: 2.1
+    h: 1.0
+    text: |-
+      Instrumented services
+      (OTel SDK / OTLP)
+    fill: light_fill
+    font_size: 17
+    bold: true
+
+  - kind: box
+    x: 3.4
+    y: 2.0
+    w: 2.0
+    h: 1.0
+    text: |-
+      OTel Collector
+      (receivers + processors)
+    fill: pale_green
+    font_size: 17
+    bold: true
+
+  - kind: box
+    x: 5.9
+    y: 1.2
+    w: 2.0
+    h: 0.9
+    text: SigNoz UI
+    fill: pale_orange
+    font_size: 16
+    bold: true
+
+  - kind: box
+    x: 5.9
+    y: 2.35
+    w: 2.0
+    h: 0.9
+    text: Query Service
+    fill: pale_orange
+    font_size: 16
+    bold: true
+
+  - kind: box
+    x: 5.9
+    y: 3.5
+    w: 2.0
+    h: 0.9
+    text: Alerting / Rules
+    fill: pale_orange
+    font_size: 16
+    bold: true
+
+  - kind: box
+    x: 8.4
+    y: 2.0
+    w: 2.2
+    h: 1.0
+    text: |-
+      ClickHouse
+      (primary telemetry store)
+    fill: light_fill
+    font_size: 17
+    bold: true
+
+  - kind: box
+    x: 11.0
+    y: 2.0
+    w: 1.4
+    h: 1.0
+    text: Users
+    fill: pale_green
+    font_size: 16
+    bold: true
+
+  - kind: arrow
+    x1: 2.9
+    y1: 2.5
+    x2: 3.4
+    y2: 2.5
+
+  - kind: arrow
+    x1: 5.4
+    y1: 2.5
+    x2: 5.9
+    y2: 2.5
+
+  - kind: arrow
+    x1: 7.9
+    y1: 2.5
+    x2: 8.4
+    y2: 2.5
+
+  - kind: arrow
+    x1: 10.6
+    y1: 2.5
+    x2: 11.0
+    y2: 2.5
+
+  - kind: note
+    x: 0.9
+    y: 5.55
+    w: 11.8
+    h: 0.35
+    text: Applications only need to know the collector endpoint; deployment mechanics vary underneath.
+
+  - kind: bullets
+    x: 0.9
+    y: 6.0
+    w: 11.7
+    h: 1.0
+    font_size: 15
+    bullets:
+      - OpenTelemetry provides a vendor-neutral instrumentation layer.
+      - Collectors handle batching, sampling, enrichment, and export.
+      - SigNoz turns raw telemetry into searchable traces, metrics, dashboards, and alerts.

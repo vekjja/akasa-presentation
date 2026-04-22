@@ -1,0 +1,82 @@
+background: white
+elements:
+  - kind: title
+    text: Migration Strategy
+
+  - kind: subtitle
+    text: Preserve the app's DogStatsD metric emission while moving the backend to OpenTelemetry and SigNoz
+
+  - kind: bullets
+    x: 0.8
+    y: 1.45
+    w: 5.8
+    h: 4.9
+    font_size: 18
+    bullets:
+      - The application was already emitting StatsD-style metrics through DogStatsD for Datadog.
+      - We introduced an OpenTelemetry Collector with a StatsD receiver so it could accept the existing metric traffic.
+      - The first migration step was to change the collector target underneath the app rather than rewriting application instrumentation.
+      - That let us validate the SigNoz/OpenTelemetry path first, with minimal initial application risk.
+
+  - kind: box
+    x: 7.0
+    y: 1.7
+    w: 1.9
+    h: 1.0
+    text: |-
+      App
+      DogStatsD metrics
+    fill: light_fill
+    font_size: 16
+    bold: true
+
+  - kind: box
+    x: 9.35
+    y: 1.7
+    w: 2.1
+    h: 1.0
+    text: |-
+      OTel Collector
+      StatsD receiver
+    fill: pale_green
+    font_size: 16
+    bold: true
+
+  - kind: box
+    x: 7.0
+    y: 3.35
+    w: 1.9
+    h: 1.0
+    text: Datadog path
+    fill: pale_orange
+    font_size: 16
+    bold: true
+
+  - kind: box
+    x: 9.35
+    y: 3.35
+    w: 2.1
+    h: 1.0
+    text: SigNoz path
+    fill: light_fill
+    font_size: 16
+    bold: true
+
+  - kind: arrow
+    x1: 8.9
+    y1: 2.2
+    x2: 9.35
+    y2: 2.2
+
+  - kind: arrow
+    x1: 10.4
+    y1: 2.7
+    x2: 10.4
+    y2: 3.35
+
+  - kind: note
+    x: 6.95
+    y: 5.25
+    w: 4.8
+    h: 0.45
+    text: "Key message: the app kept speaking DogStatsD at first; the platform absorbed the migration."

@@ -1,0 +1,94 @@
+background: white
+elements:
+  - kind: title
+    text: Bare Metal Path
+
+  - kind: subtitle
+    text: Docker Compose deployment managed by custom Ansible playbooks
+
+  - kind: bullets
+    x: 0.8
+    y: 1.55
+    w: 6.0
+    h: 5.1
+    font_size: 18
+    bullets:
+      - Best fit for dedicated hosts, lower platform abstraction, and direct control of storage, networking, and host tuning.
+      - Ansible playbooks prepare hosts, template config, ship secrets, and orchestrate `docker compose` lifecycle.
+      - The first SigNoz/OpenTelemetry deployment was validated on a dedicated bare metal instance before broader rollout.
+      - That initial environment was used to tune OpenTelemetry receiver, processor, and export behavior before introducing Kubernetes complexity.
+      - Compose runs the observability services as a tightly-coupled stack on each target environment.
+      - Persistent volumes, backup policy, firewall rules, and service exposure are managed at the host level.
+
+  - kind: box
+    x: 7.2
+    y: 1.65
+    w: 2.2
+    h: 0.95
+    text: |-
+      Ansible
+      inventory + vars
+    fill: light_fill
+    font_size: 17
+    bold: true
+
+  - kind: box
+    x: 7.2
+    y: 3.0
+    w: 2.2
+    h: 0.95
+    text: |-
+      Host bootstrap
+      packages, sysctl, storage
+    fill: pale_green
+    font_size: 16
+    bold: true
+
+  - kind: box
+    x: 10.0
+    y: 1.65
+    w: 2.2
+    h: 0.95
+    text: |-
+      Compose services
+      SigNoz + OTel
+    fill: pale_orange
+    font_size: 17
+    bold: true
+
+  - kind: box
+    x: 10.0
+    y: 3.0
+    w: 2.2
+    h: 0.95
+    text: |-
+      Volumes and ports
+      managed per host
+    fill: light_fill
+    font_size: 16
+    bold: true
+
+  - kind: arrow
+    x1: 9.4
+    y1: 2.1
+    x2: 10.0
+    y2: 2.1
+
+  - kind: arrow
+    x1: 9.4
+    y1: 3.45
+    x2: 10.0
+    y2: 3.45
+
+  - kind: arrow
+    x1: 8.3
+    y1: 2.6
+    x2: 8.3
+    y2: 3.0
+
+  - kind: note
+    x: 7.0
+    y: 5.3
+    w: 5.6
+    h: 0.45
+    text: "Typical talking point: bare metal was the proving ground for OTel tuning, with Ansible owning machine state and Compose owning process topology."

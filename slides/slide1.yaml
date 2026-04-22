@@ -1,0 +1,39 @@
+background: white
+elements:
+  - kind: banner
+    h: 1.35
+    fill: title
+
+  - kind: textbox
+    x: 0.7
+    y: 1.65
+    w: 12.0
+    h: 1.6
+    text: |-
+      OpenTelemetry + SigNoz
+      Observability Stack
+    font_name: Aptos Display
+    font_size: 28
+    bold: true
+    color: title
+
+  - kind: textbox
+    x: 0.72
+    y: 3.1
+    w: 11.5
+    h: 1.2
+    text: >-
+      Two deployment models: bare metal Docker Compose automated with Ansible,
+      and GKE deployed through custom Pulumi SDKs wrapping the official
+      SigNoz/OpenTelemetry charts.
+    font_name: Aptos
+    font_size: 18
+    color: secondary
+
+  - kind: note
+    x: 0.75
+    y: 6.75
+    w: 11.5
+    h: 0.3
+    text: >-
+      Deck is based on the deployment strategies architected for the Injective SigNoz/OpenTelemetry stack.

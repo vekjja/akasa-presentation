@@ -1,0 +1,24 @@
+background: white
+elements:
+  - kind: title
+    text: How the Two Models Compare
+
+  - kind: subtitle
+    text: Same telemetry contract, different operational responsibilities
+
+  - kind: table
+    x: 0.7
+    y: 1.65
+    w: 12.0
+    h: 4.4
+    column_widths: [3.0, 4.4, 4.6]
+    headers:
+      - Dimension
+      - Bare Metal Compose + Ansible
+      - GKE + Pulumi + Official Charts
+    rows:
+      - ["Packaging", "Compose services on managed hosts", "Helm releases on Kubernetes"]
+      - ["Automation", "Playbooks configure machines and run stack lifecycle", "Pulumi programs provision and update cluster resources"]
+      - ["Scaling", "Vertical or host-based scaling", "Horizontal pod and cluster scaling patterns"]
+      - ["Operations", "Host tuning, ports, volumes, backups", "Namespaces, ingress, storage classes, RBAC, autoscaling"]
+      - ["Use case", "Stable dedicated environments with direct infra control", "Platformized environments needing repeatable multi-cluster rollout"]

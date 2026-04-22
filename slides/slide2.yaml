@@ -1,0 +1,49 @@
+background: white
+elements:
+  - kind: title
+    text: Why This Stack
+
+  - kind: subtitle
+    text: What problem the platform solves for engineering and operations
+
+  - kind: bullets
+    x: 0.85
+    y: 1.6
+    w: 5.8
+    h: 4.9
+    font_size: 20
+    bullets:
+      - Standardize telemetry collection across services, runtimes, and environments with OpenTelemetry.
+      - Centralize traces, metrics, and logs in SigNoz so teams can troubleshoot from one place.
+      - Use environment-specific deployment models without changing the observability contract presented to applications.
+      - "Keep rollout and operations automated: Ansible for bare metal, Pulumi plus Helm for GKE."
+
+  - kind: box
+    x: 7.1
+    y: 1.75
+    w: 5.3
+    h: 1.0
+    text: App teams emit OTLP once
+    fill: light_fill
+    font_size: 18
+    bold: true
+
+  - kind: box
+    x: 7.1
+    y: 3.05
+    w: 5.3
+    h: 1.0
+    text: Collectors normalize and route telemetry
+    fill: pale_green
+    font_size: 18
+    bold: true
+
+  - kind: box
+    x: 7.1
+    y: 4.35
+    w: 5.3
+    h: 1.0
+    text: SigNoz stores, correlates, and visualizes signals
+    fill: pale_orange
+    font_size: 18
+    bold: true
