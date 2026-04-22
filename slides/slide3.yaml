@@ -1,10 +1,10 @@
 background: white
 elements:
   - kind: title
-    text: Reference Architecture
+    text: Target Architecture
 
   - kind: subtitle
-    text: Common data flow across both environments
+    text: A common telemetry path across migration phases and deployment targets
 
   - kind: box
     x: 0.8
@@ -12,8 +12,8 @@ elements:
     w: 2.1
     h: 1.0
     text: |-
-      Instrumented services
-      (OTel SDK / OTLP)
+      Apps and checks
+      DogStatsD / OTLP / HTTP
     fill: light_fill
     font_size: 17
     bold: true
@@ -25,7 +25,7 @@ elements:
     h: 1.0
     text: |-
       OTel Collector
-      (receivers + processors)
+      receivers + processors
     fill: pale_green
     font_size: 17
     bold: true
@@ -45,7 +45,7 @@ elements:
     y: 2.35
     w: 2.0
     h: 0.9
-    text: Query Service
+    text: Query layer
     fill: pale_orange
     font_size: 16
     bold: true
@@ -55,7 +55,7 @@ elements:
     y: 3.5
     w: 2.0
     h: 0.9
-    text: Alerting / Rules
+    text: Alerts / rules
     fill: pale_orange
     font_size: 16
     bold: true
@@ -67,7 +67,7 @@ elements:
     h: 1.0
     text: |-
       ClickHouse
-      (primary telemetry store)
+      telemetry store
     fill: light_fill
     font_size: 17
     bold: true
@@ -111,7 +111,7 @@ elements:
     y: 5.55
     w: 11.8
     h: 0.35
-    text: Applications only need to know the collector endpoint; deployment mechanics vary underneath.
+    text: Applications and checks converge on the collector layer, even while infrastructure evolves underneath.
 
   - kind: bullets
     x: 0.9
@@ -120,6 +120,5 @@ elements:
     h: 1.0
     font_size: 15
     bullets:
-      - OpenTelemetry provides a vendor-neutral instrumentation layer.
-      - Collectors handle batching, sampling, enrichment, and export.
-      - SigNoz turns raw telemetry into searchable traces, metrics, dashboards, and alerts.
+      - The collector absorbs protocol differences, routing, and enrichment.
+      - SigNoz becomes the shared backend for search, dashboards, and alerting, including creating alerts directly from dashboards.

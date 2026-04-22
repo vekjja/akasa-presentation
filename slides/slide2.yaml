@@ -1,29 +1,28 @@
 background: white
 elements:
   - kind: title
-    text: Why This Stack
+    text: Why We Changed
 
   - kind: subtitle
-    text: What problem the platform solves for engineering and operations
+    text: Standardize telemetry, reduce migration risk, and support both bare metal and Kubernetes
 
   - kind: bullets
     x: 0.85
     y: 1.6
     w: 5.8
-    h: 4.9
+    h: 4.4
     font_size: 20
     bullets:
-      - Standardize telemetry collection across services, runtimes, and environments with OpenTelemetry.
-      - Centralize traces, metrics, and logs in SigNoz so teams can troubleshoot from one place.
-      - Use environment-specific deployment models without changing the observability contract presented to applications.
-      - "Keep rollout and operations automated: Ansible for bare metal, Pulumi plus Helm for GKE."
+      - Standardize metrics, logs, traces, and checks behind one OpenTelemetry collection layer.
+      - Move away from environment-specific monitoring assumptions without forcing a day-one app rewrite.
+      - Keep rollout automated with Ansible on bare metal and Pulumi plus Helm on GKE.
 
   - kind: box
     x: 7.1
     y: 1.75
     w: 5.3
     h: 1.0
-    text: App teams emit OTLP once
+    text: No initial app rewrite
     fill: light_fill
     font_size: 18
     bold: true
@@ -33,7 +32,7 @@ elements:
     y: 3.05
     w: 5.3
     h: 1.0
-    text: Collectors normalize and route telemetry
+    text: One collector layer
     fill: pale_green
     font_size: 18
     bold: true
@@ -43,7 +42,7 @@ elements:
     y: 4.35
     w: 5.3
     h: 1.0
-    text: SigNoz stores, correlates, and visualizes signals
+    text: Same observability story
     fill: pale_orange
     font_size: 18
     bold: true

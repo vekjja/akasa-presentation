@@ -23,9 +23,8 @@ elements:
     w: 11.5
     h: 1.2
     text: >-
-      Two deployment models: bare metal Docker Compose automated with Ansible,
-      and GKE deployed through custom Pulumi SDKs wrapping the official
-      SigNoz/OpenTelemetry charts.
+      From DogStatsD and Datadog to OpenTelemetry and SigNoz across a
+      bare-metal proving ground and a dedicated GKE management cluster.
     font_name: Aptos
     font_size: 18
     color: secondary
@@ -36,4 +35,4 @@ elements:
     w: 11.5
     h: 0.3
     text: >-
-      Deck is based on the deployment strategies architected for the Injective SigNoz/OpenTelemetry stack.
+      Migration story, deployment approach, and rollout lessons from the platform transition.

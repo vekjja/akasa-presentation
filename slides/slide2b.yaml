@@ -1,22 +1,22 @@
 background: white
 elements:
   - kind: title
-    text: Migration Strategy
+    text: Compatibility-First Migration
 
   - kind: subtitle
-    text: Preserve the app's DogStatsD metric emission while moving the backend to OpenTelemetry and SigNoz
+    text: Keep the app speaking DogStatsD first, then move the platform underneath it
 
   - kind: bullets
     x: 0.8
     y: 1.45
     w: 5.8
-    h: 4.9
+    h: 4.4
     font_size: 18
     bullets:
-      - The application was already emitting StatsD-style metrics through DogStatsD for Datadog.
-      - We introduced an OpenTelemetry Collector with a StatsD receiver so it could accept the existing metric traffic.
-      - The first migration step was to change the collector target underneath the app rather than rewriting application instrumentation.
-      - That let us validate the SigNoz/OpenTelemetry path first, with minimal initial application risk.
+      - The app already emitted DogStatsD metrics for Datadog.
+      - We added an OpenTelemetry Collector with a StatsD receiver to accept that traffic unchanged.
+      - The first change was the collector target, not the application code.
+      - That gave us a low-risk path to validate SigNoz before native OTel SDK cutover.
 
   - kind: box
     x: 7.0
@@ -25,7 +25,7 @@ elements:
     h: 1.0
     text: |-
       App
-      DogStatsD metrics
+      DogStatsD
     fill: light_fill
     font_size: 16
     bold: true
@@ -47,7 +47,7 @@ elements:
     y: 3.35
     w: 1.9
     h: 1.0
-    text: Datadog path
+    text: Original path
     fill: pale_orange
     font_size: 16
     bold: true
@@ -57,7 +57,7 @@ elements:
     y: 3.35
     w: 2.1
     h: 1.0
-    text: SigNoz path
+    text: New path
     fill: light_fill
     font_size: 16
     bold: true
@@ -79,4 +79,4 @@ elements:
     y: 5.25
     w: 4.8
     h: 0.45
-    text: "Key message: the app kept speaking DogStatsD at first; the platform absorbed the migration."
+    text: "Key message: compatibility came first, application rewrites came later."

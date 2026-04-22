@@ -1,24 +1,22 @@
 background: white
 elements:
   - kind: title
-    text: Bare Metal Path
+    text: "Phase 1: Bare Metal Proving Ground"
 
   - kind: subtitle
-    text: Docker Compose deployment managed by custom Ansible playbooks
+    text: Dedicated Docker Compose deployment managed by custom Ansible playbooks
 
   - kind: bullets
     x: 0.8
     y: 1.55
     w: 6.0
-    h: 5.1
+    h: 4.5
     font_size: 18
     bullets:
-      - Best fit for dedicated hosts, lower platform abstraction, and direct control of storage, networking, and host tuning.
-      - Ansible playbooks prepare hosts, template config, ship secrets, and orchestrate `docker compose` lifecycle.
-      - The first SigNoz/OpenTelemetry deployment was validated on a dedicated bare metal instance before broader rollout.
-      - That initial environment was used to tune OpenTelemetry receiver, processor, and export behavior before introducing Kubernetes complexity.
-      - Compose runs the observability services as a tightly-coupled stack on each target environment.
-      - Persistent volumes, backup policy, firewall rules, and service exposure are managed at the host level.
+      - The first SigNoz and OpenTelemetry deployment ran on a dedicated bare metal instance.
+      - That environment let us tune receiver, processor, and export behavior before adding Kubernetes complexity.
+      - Ansible handled host preparation, config templating, secrets, and `docker compose` orchestration.
+      - Bare metal gave direct control over storage, networking, and operational debugging during the proving phase.
 
   - kind: box
     x: 7.2
@@ -91,4 +89,4 @@ elements:
     y: 5.3
     w: 5.6
     h: 0.45
-    text: "Typical talking point: bare metal was the proving ground for OTel tuning, with Ansible owning machine state and Compose owning process topology."
+    text: "Talking point: prove and tune on bare metal first, then carry the validated configuration forward."

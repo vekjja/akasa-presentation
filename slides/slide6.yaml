@@ -1,24 +1,101 @@
 background: white
 elements:
   - kind: title
-    text: How the Two Models Compare
+    text: Rollout Journey
 
   - kind: subtitle
-    text: Same telemetry contract, different operational responsibilities
+    text: The migration progressed in controlled phases rather than one big cutover
 
-  - kind: table
-    x: 0.7
-    y: 1.65
-    w: 12.0
-    h: 4.4
-    column_widths: [3.0, 4.4, 4.6]
-    headers:
-      - Dimension
-      - Bare Metal Compose + Ansible
-      - GKE + Pulumi + Official Charts
-    rows:
-      - ["Packaging", "Compose services on managed hosts", "Helm releases on Kubernetes"]
-      - ["Automation", "Playbooks configure machines and run stack lifecycle", "Pulumi programs provision and update cluster resources"]
-      - ["Scaling", "Vertical or host-based scaling", "Horizontal pod and cluster scaling patterns"]
-      - ["Operations", "Host tuning, ports, volumes, backups", "Namespaces, ingress, storage classes, RBAC, autoscaling"]
-      - ["Use case", "Stable dedicated environments with direct infra control", "Platformized environments needing repeatable multi-cluster rollout"]
+  - kind: box
+    x: 0.6
+    y: 2.0
+    w: 2.2
+    h: 1.0
+    text: |-
+      1. Datadog
+      DogStatsD + checks
+    fill: light_fill
+    font_size: 16
+    bold: true
+
+  - kind: box
+    x: 3.0
+    y: 2.0
+    w: 2.2
+    h: 1.0
+    text: |-
+      2. Collector shim
+      StatsD receiver
+    fill: pale_green
+    font_size: 16
+    bold: true
+
+  - kind: box
+    x: 5.4
+    y: 2.0
+    w: 2.2
+    h: 1.0
+    text: |-
+      3. Bare metal
+      tune and validate
+    fill: pale_orange
+    font_size: 16
+    bold: true
+
+  - kind: box
+    x: 7.8
+    y: 2.0
+    w: 2.2
+    h: 1.0
+    text: |-
+      4. GKE mgmt
+      cluster rollout
+    fill: light_fill
+    font_size: 16
+    bold: true
+
+  - kind: box
+    x: 10.2
+    y: 2.0
+    w: 2.2
+    h: 1.0
+    text: |-
+      5. Native OTel
+      service pilot
+    fill: pale_green
+    font_size: 16
+    bold: true
+
+  - kind: arrow
+    x1: 2.8
+    y1: 2.5
+    x2: 3.0
+    y2: 2.5
+
+  - kind: arrow
+    x1: 5.2
+    y1: 2.5
+    x2: 5.4
+    y2: 2.5
+
+  - kind: arrow
+    x1: 7.6
+    y1: 2.5
+    x2: 7.8
+    y2: 2.5
+
+  - kind: arrow
+    x1: 10.0
+    y1: 2.5
+    x2: 10.2
+    y2: 2.5
+
+  - kind: bullets
+    x: 0.9
+    y: 4.4
+    w: 11.5
+    h: 1.4
+    font_size: 18
+    bullets:
+      - Each phase reduced risk while increasing confidence in the new platform.
+      - Platform compatibility came first; native OpenTelemetry instrumentation came later.

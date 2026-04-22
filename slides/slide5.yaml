@@ -1,33 +1,32 @@
 background: white
 elements:
   - kind: title
-    text: GKE Path
+    text: "Phase 2: GKE Management Cluster"
 
   - kind: subtitle
-    text: Official SigNoz/OpenTelemetry charts wrapped in custom Pulumi SDKs
+    text: Dedicated management cluster using Pulumi and the official SigNoz/OpenTelemetry charts
 
   - kind: bullets
     x: 0.8
     y: 1.55
     w: 6.0
-    h: 5.1
+    h: 4.7
     font_size: 18
     bullets:
-      - After tuning the stack on bare metal, we deployed next into a dedicated GKE management cluster.
-      - Pulumi defines cluster-facing infrastructure and deploys Helm releases as code.
-      - Official charts keep the deployment aligned with upstream SigNoz/OpenTelemetry packaging and defaults.
-      - "Custom Pulumi SDKs encode company conventions: namespaces, values, networking, storage classes, and environment wiring."
-      - The OpenTelemetry Collector was deployed as a DaemonSet so each node had local collection capacity across the cluster.
-      - We converted existing Datadog HTTP checks to OpenTelemetry-based HTTP checks as part of the management-cluster rollout.
-      - Some endpoints required JSON parsing, so we contributed that functionality upstream to SigNoz in a PR.
-      - GKE adds managed scheduling, autoscaling, workload isolation, and native Kubernetes operational patterns.
+      - Once tuned on bare metal, the stack moved into a dedicated GKE management cluster.
+      - Pulumi and the official charts made the rollout repeatable and close to upstream defaults.
+      - The OpenTelemetry Collector ran as a DaemonSet to provide node-local collection across the cluster.
+      - Datadog HTTP checks were converted to OpenTelemetry HTTP checks during this phase.
+      - JSON parsing was needed for some endpoints, so that capability was contributed upstream to SigNoz.
 
   - kind: box
     x: 7.1
     y: 1.55
     w: 2.1
     h: 0.95
-    text: Pulumi program
+    text: |-
+      Pulumi
+      + Helm
     fill: light_fill
     font_size: 17
     bold: true
@@ -37,7 +36,9 @@ elements:
     y: 1.55
     w: 2.1
     h: 0.95
-    text: Helm chart values
+    text: |-
+      Official
+      chart values
     fill: pale_green
     font_size: 17
     bold: true
@@ -60,7 +61,7 @@ elements:
     w: 2.1
     h: 0.95
     text: |-
-      OTel Collector
+      Collector
       DaemonSet
     fill: light_fill
     font_size: 16
@@ -89,4 +90,4 @@ elements:
     y: 5.25
     w: 5.7
     h: 0.45
-    text: "Typical talking point: after bare-metal tuning, the management cluster validated Kubernetes rollout, node-local collection, and converted health checks."
+    text: "Talking point: the management cluster turned a tuned stack into a repeatable Kubernetes platform."

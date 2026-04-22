@@ -1,10 +1,10 @@
 background: white
 elements:
   - kind: title
-    text: Operational Workflow
+    text: Steady-State Operating Model
 
   - kind: subtitle
-    text: From telemetry emission to troubleshooting and alerting
+    text: What the final observability path looks like once the migration is complete
 
   - kind: box
     x: 0.7
@@ -13,7 +13,7 @@ elements:
     h: 1.0
     text: |-
       1. Apps emit
-      DogStatsD / OTLP
+      metrics / logs / traces
     fill: light_fill
     font_size: 16
     bold: true
@@ -25,7 +25,7 @@ elements:
     h: 1.0
     text: |-
       2. Collectors receive,
-      process, and export
+      enrich, and route
     fill: pale_green
     font_size: 16
     bold: true
@@ -37,7 +37,7 @@ elements:
     h: 1.0
     text: |-
       3. SigNoz stores and
-      correlates telemetry
+      correlates signals
     fill: pale_orange
     font_size: 16
     bold: true
@@ -60,8 +60,8 @@ elements:
     w: 2.0
     h: 1.0
     text: |-
-      5. Alert on symptoms
-      and drill into cause
+      5. Build alerts
+      from dashboards
     fill: pale_green
     font_size: 16
     bold: true
@@ -97,6 +97,6 @@ elements:
     h: 1.2
     font_size: 17
     bullets:
-      - The first migration preserved existing DogStatsD metric emission and moved translation into the collector layer.
-      - Once the platform path was ready, one service was migrated to the OpenTelemetry SDK for logs and metrics so it was ready for switchover.
-      - After that compatibility step, the application-facing workflow stayed stable even as the backend moved to SigNoz.
+      - The collector layer hides protocol and routing details from application teams.
+      - Native OTel SDK rollout can happen service by service once the platform is ready.
+      - Teams can turn dashboard views into alerts, then drill from the alert back into traces, logs, and metrics.
