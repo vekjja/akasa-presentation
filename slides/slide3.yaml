@@ -61,19 +61,19 @@ elements:
     bold: true
 
   - kind: box
-    x: 8.4
-    y: 2.0
-    w: 2.2
-    h: 1.0
+    x: 5.9
+    y: 4.65
+    w: 2.0
+    h: 0.9
     text: |-
       ClickHouse
       telemetry store
-    fill: light_fill
-    font_size: 17
+    fill: pale_orange
+    font_size: 16
     bold: true
 
   - kind: box
-    x: 11.0
+    x: 10.3
     y: 2.0
     w: 1.4
     h: 1.0
@@ -97,27 +97,21 @@ elements:
   - kind: arrow
     x1: 7.9
     y1: 2.5
-    x2: 8.4
-    y2: 2.5
-
-  - kind: arrow
-    x1: 10.6
-    y1: 2.5
-    x2: 11.0
+    x2: 10.3
     y2: 2.5
 
   - kind: note
     x: 0.9
-    y: 5.55
+    y: 5.75
     w: 11.8
     h: 0.35
     text: Applications and checks converge on the collector layer, even while infrastructure evolves underneath.
 
   - kind: bullets
     x: 0.9
-    y: 6.0
+    y: 6.15
     w: 11.7
-    h: 1.0
+    h: 0.8
     font_size: 15
     bullets:
       - The collector absorbs protocol differences, routing, and enrichment.
